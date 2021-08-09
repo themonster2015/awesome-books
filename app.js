@@ -8,10 +8,10 @@ let books = [
     { title: 'Book One', author: 'James' }
 ];
 
-addBtn.addEventListener('click', function (e){
+addBtn.addEventListener('click', function (e) {
     let data = { title: title.value, author: author.value };
     if (data.title && data.author) {
-        
+
         books.unshift(data)
         booksList.innerHTML = ''
         display();
@@ -25,18 +25,27 @@ addBtn.addEventListener('click', function (e){
 });
 
 function display() {
-    books.forEach(val => {
+    books.forEach((val, idx) => {
 
         let li = document.createElement('li');
-        let text = `<div>
+        let text = `<div id=${idx}>
             <strong>${val.title}</strong><br>
             <small>${val.author}</small>
             </div><br>
+            <button id='removeBook'>Remove</button>
         `;
 
-        li.innerHTML= text;
+        li.innerHTML = text;
         booksList.appendChild(li);
+
+        let remove = document.getElementById('removeBook');
+        remove.addEventListener('click', function (e) {
+            console.log(e)
+        })
     })
+
 }
+
+
 
 display();
