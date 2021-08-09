@@ -27,37 +27,33 @@ addBtn.addEventListener('click', () => {
 
 function display() {
   const strBooks = localStorage.books;
+  if (strBooks) {
+    JSON.parse(strBooks).forEach((val, index) => {
+      const li = document.createElement('li');
+      const text = `<div id="${index}">
+        <strong>${val.title}</strong><br>
+        <small>${val.small}</small><br>
+        <button class="delete">Remove</button>
+      </div>`;
 
-  JSON.parse(strBooks).forEach((val, index) => {
-    const li = document.createElement('li');
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('id', index);
+      li.innerHTML = text;
 
-    wrapper.innerHTML = `
-            <strong>${val.title}</strong><br>
-            <small>${val.author}</small><br>
-        `;
-    li.appendChild(wrapper);
+      booksList.appendChild(li);
+    });
+  }
 
-    const button = document.createElement('button');
-    button.innerText = 'Remove';
+  const buttons = document.querySelectorAll('.delete');
 
-    wrapper.appendChild(button);
-
-    li.appendChild(wrapper);
-
-    button.addEventListener('click', (e) => {
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
       const bookIndex = e.target.parentNode.id;
       const newBooks = JSON.parse(strBooks);
-
       newBooks.splice(bookIndex, 1);
 
       localStorage.books = JSON.stringify(newBooks);
       booksList.innerHTML = '';
-      window.location.reload();
+      display();
     });
-
-    booksList.appendChild(li);
   });
 }
 
