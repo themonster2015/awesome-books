@@ -4,17 +4,18 @@ let addBtn = document.getElementById('addBtn');
 let booksList = document.getElementById('booksList');
 
 
-let books = [
-    { title: 'Book One', author: 'James' }
-];
+let books = [];
 
-localStorage.setItem("lastname", "Smith");
+sessionStorage.books = JSON.stringify(books);
 
 addBtn.addEventListener('click', function (e) {
     let data = { title: title.value, author: author.value };
     if (data.title && data.author) {
 
         books.unshift(data)
+        
+        localStorage.books = JSON.stringify(books);
+
         booksList.innerHTML = ''
         display();
 
@@ -27,7 +28,9 @@ addBtn.addEventListener('click', function (e) {
 });
 
 function display() {
-    books.forEach((val, index) => {
+    let str_books = localStorage.books;
+
+    JSON.parse(str_books).forEach((val, index) => {
     
         let li = document.createElement('li');
         let text = `<div id=${index}>
@@ -46,7 +49,6 @@ function display() {
             console.log(e.target)
         }
     })
-
 
 }
 
