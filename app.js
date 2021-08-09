@@ -1,68 +1,64 @@
-let title = document.getElementById('title');
-let author = document.getElementById('author');
-let addBtn = document.getElementById('addBtn');
-let booksList = document.getElementById('booksList');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const addBtn = document.getElementById('addBtn');
+const booksList = document.getElementById('booksList');
 
-
-let books = [];
+const books = [];
 
 sessionStorage.books = JSON.stringify(books);
 
-addBtn.addEventListener('click', function (e) {
-    let data = { title: title.value, author: author.value };
-    if (data.title && data.author) {
+addBtn.addEventListener('click', () => {
+  const data = { title: title.value, author: author.value };
+  if (data.title && data.author) {
+    books.unshift(data);
 
-        books.unshift(data)
-        
-        localStorage.books = JSON.stringify(books);
+    localStorage.books = JSON.stringify(books);
 
-        booksList.innerHTML = ''
-        display();
-
-        title.value = ''
-        author.value = ''
-
-    } else {
-        alert('Title or Author cannot be blank!')
-    }
+    booksList.innerHTML = '';
+    /* eslint-disable */
+    display();
+    title.value = '';
+    author.value = '';
+  } else {
+      alert('Title or Author cannot be blank!');
+      /* eslint-enable */
+  }
 });
 
 function display() {
-    let str_books = localStorage.books;
+  const strBooks = localStorage.books;
 
-    JSON.parse(str_books).forEach((val, index) => {
-    
-        let li = document.createElement('li');
-        let wrapper = document.createElement('div')
-        wrapper.setAttribute('id', index)
+  JSON.parse(strBooks).forEach((val, index) => {
+    const li = document.createElement('li');
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('id', index);
 
-        wrapper.innerHTML = `
+    wrapper.innerHTML = `
             <strong>${val.title}</strong><br>
             <small>${val.author}</small><br>
         `;
-        li.appendChild(wrapper);
+    li.appendChild(wrapper);
 
-        var button = document.createElement("button");
-        button.innerText = 'Remove';
+    const button = document.createElement('button');
+    button.innerText = 'Remove';
 
-        wrapper.appendChild(button)
+    wrapper.appendChild(button);
 
-        li.appendChild(wrapper)
-        
-        button.addEventListener("click", function (e) {
-            let book_index = e.target.parentNode.id;
-            let new_books = JSON.parse(str_books)
+    li.appendChild(wrapper);
 
-            new_books.splice(book_index, 1)
+    button.addEventListener('click', (e) => {
+      const bookIndex = e.target.parentNode.id;
+      const newBooks = JSON.parse(strBooks);
 
-            localStorage.books = JSON.stringify(new_books);
-            booksList.innerHTML = ''
-            location.reload();
-        })
+      newBooks.splice(bookIndex, 1);
 
-        booksList.appendChild(li);
-    })
+      localStorage.books = JSON.stringify(newBooks);
+      booksList.innerHTML = '';
+      window.location.reload();
+    });
+
+    booksList.appendChild(li);
+  });
 }
 
 display();
-

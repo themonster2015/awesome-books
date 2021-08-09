@@ -10,7 +10,7 @@ This is a simple javascript booklist application. The project tests the use of o
 
 ## Live Demo
 
-[Live Demo Link](https://vikita-blog.herokuapp.com/)
+[Live Demo Link](https://themonster2015.github.io/awesome-books/)
 
 ## Getting Started
 
