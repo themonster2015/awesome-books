@@ -33,23 +33,35 @@ function display() {
     JSON.parse(str_books).forEach((val, index) => {
     
         let li = document.createElement('li');
-        let text = `<div id=${index}>
+        let wrapper = document.createElement('div')
+        wrapper.setAttribute('id', index)
+
+        wrapper.innerHTML = `
             <strong>${val.title}</strong><br>
             <small>${val.author}</small><br>
-            <button id='removeBook'>Remove</button>
-            </div>
         `;
+        li.appendChild(wrapper);
 
-        li.innerHTML = text;
+        var button = document.createElement("button");
+        button.innerText = 'Remove';
+
+        wrapper.appendChild(button)
+
+        li.appendChild(wrapper)
+        
+        button.addEventListener("click", function (e) {
+            let book_index = e.target.parentNode.id;
+            let new_books = JSON.parse(str_books)
+
+            new_books.splice(book_index, 1)
+
+            localStorage.books = JSON.stringify(new_books);
+            booksList.innerHTML = ''
+            location.reload();
+        })
+
         booksList.appendChild(li);
-
-        let remove = document.getElementById('removeBook')
-        remove.addEventListener('click', removeBook1);
-        function removeBook1(e) {
-            console.log(e.target)
-        }
     })
-
 }
 
 display();
