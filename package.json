@@ -1,0 +1,22 @@
+{
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "This is a simple javascript booklist application. The project tests the use of objects.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themonster2015/awesome-books.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/themonster2015/awesome-books/issues"
+  },
+  "homepage": "https://github.com/themonster2015/awesome-books#readme",
+  "dependencies": {
+    "eslint": "^7.32.0"
+  }
+}
