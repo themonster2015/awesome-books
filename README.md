@@ -14,7 +14,7 @@ This is a simple javascript booklist application. The project tests the use of o
 
 ## Screenshot
 
-![screenshot](https://user-images.githubusercontent.com/10905837/129005829-cbd3423f-19c6-493d-b8db-0bbb4f48d754.png)
+![print](https://user-images.githubusercontent.com/42869046/129027708-250f6f05-d10e-49e6-ae06-e431cda4208b.JPG)
 
 
 ## Getting Started
