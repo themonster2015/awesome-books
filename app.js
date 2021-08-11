@@ -2,23 +2,28 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
 const booksList = document.getElementById('booksList');
+// Navigation selectors
 const addNewSection = document.getElementById('addNewSection');
 const contactSection = document.getElementById('contactSection');
 const addNewBtn = document.getElementById('addNewBtn');
 const addContactBtn = document.getElementById('addContactBtn');
 const displayArea = document.getElementById('displayArea');
-
+const dateArea = document.getElementById('dateArea');
+// date section
+dateArea.innerHTML = Date();
+dateArea.classList.add('float-end', 'm-2');
 
 // Navigation Area
 addNewBtn.addEventListener('click', () => {
   displayArea.classList.add('d-none');
-  addNewSection.classList.remove('d-none')
+  addNewSection.classList.remove('d-none');
+  contactSection.classList.add('d-none');
 });
 
 addContactBtn.addEventListener('click', () => {
   displayArea.classList.add('d-none');
-  addNewSection.classList.add('d-none')
-  contactSection.classList.remove('d-none')
+  addNewSection.classList.add('d-none');
+  contactSection.classList.remove('d-none');
 });
 
 const books = [];
@@ -43,12 +48,13 @@ class Book {
     if (strBooks) {
       JSON.parse(strBooks).forEach((val, index) => {
         const li = document.createElement('li');
-        const text = `<div id=${index}>
-        <strong>${val.title}</strong><br>
-        <small>${val.author}</small><br>
+        const text = `<div id=${index} class="p-2">
+        <div>
+        <strong>${val.title}</strong> by
+        <small>${val.author}</small></div>
         <button class="delete">Remove</button>
       </div>`;
-
+        li.classList.add('book-li');
         li.innerHTML = text;
         booksList.appendChild(li);
       });
@@ -90,6 +96,9 @@ addBtn.addEventListener('click', () => {
     const book = new Book(title.value, author.value);
     book.addBook();
     refreshBooksList();
+    displayArea.classList.remove('d-none');
+    addNewSection.classList.add('d-none');
+    contactSection.classList.add('d-none');
   } else {
     /* eslint-disable */
     alert('Title or Author cannot be blank!');
