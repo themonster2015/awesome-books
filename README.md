@@ -12,6 +12,11 @@ This is a simple javascript booklist application. The project tests the use of o
 
 [Live Demo Link](https://themonster2015.github.io/awesome-books/)
 
+## Screenshot
+
+![screenshot](https://user-images.githubusercontent.com/10905837/129005829-cbd3423f-19c6-493d-b8db-0bbb4f48d754.png)
+
+
 ## Getting Started
 
 - Click on the `Code` green button
