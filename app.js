@@ -2,18 +2,19 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
 const booksList = document.getElementById('booksList');
-// Navigation selector
+
 const addNewSection = document.getElementById('addNewSection');
 const contactSection = document.getElementById('contactSection');
 const addNewBtn = document.getElementById('addNewBtn');
 const addContactBtn = document.getElementById('addContactBtn');
 const displayArea = document.getElementById('displayArea');
 const dateArea = document.getElementById('dateArea');
-// date section
-dateArea.innerHTML = Date();
+
+/* eslint-disable */
+dateArea.innerHTML = luxon.DateTime.now().toFormat('LLL dd yyyy, HH:mm:ss a');
+/* eslint-disable */
 dateArea.classList.add('float-end', 'm-2');
 
-// Navigation Area
 addNewBtn.addEventListener('click', () => {
   displayArea.classList.add('d-none');
   addNewSection.classList.remove('d-none');
