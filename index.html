@@ -4,19 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Awesome Books</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>All Awesome Books</title>
   </head>
   <body>
-    <h1>Awesome Books</h1>
-    <hr />
-    <div>
-      <input type="text" id="title" placeholder="Title..." />
-      <input type="text" id="author" placeholder="Author..." />
-      <button id="addBtn">Add Book</button>
+    <div class="container mt-2">
+      <h1 class="text-center font-weight-bold">All awesome books</h1>
+      <div class="bookList">
+        <ul id="booksList" class="list-group border border-dark"></ul>
+      </div>
+      <hr class="breakline" />
+      <div class="form-container">
+        <h2 class="h2 text-center font-weight-bold">Add a new book</h2>
+        <input
+          class="form-control mb-2 border border-dark"
+          type="text"
+          id="title"
+          placeholder="Title..."
+        />
+        <input
+          class="form-control mb-2 border border-dark"
+          type="text"
+          id="author"
+          placeholder="Author..."
+        />
+        <button class="btn btn-outline-dark float-right" id="addBtn">
+          Add Book
+        </button>
+      </div>
+      <hr />
     </div>
-    <hr />
-
-    <ul id="booksList"></ul>
 
     <script src="app.js"></script>
   </body>

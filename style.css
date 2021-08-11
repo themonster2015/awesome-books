@@ -1,3 +1,30 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bookList {
+  border: 12x black solid;
+}
+.form-container {
+  margin: auto;
+  width: 400px;
+}
+
+.list-group > li > div {
+  display: flex;
+  justify-content: space-between;
+}
+li {
+  list-style: none;
+  background: white;
+}
+li:nth-child(odd) {
+  background: lightgrey;
+}
+.breakline {
+  border: solid 1px;
+  width: 200px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }

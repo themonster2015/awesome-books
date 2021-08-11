@@ -25,12 +25,12 @@ class Book {
     if (strBooks) {
       JSON.parse(strBooks).forEach((val, index) => {
         const li = document.createElement('li');
-        const text = `<div id=${index}>
-        <strong>${val.title}</strong><br>
-        <small>${val.author}</small><br>
+        const text = `<div id=${index} class="p-2">
+        <div>
+        <strong>${val.title}</strong> by
+        <small>${val.author}</small></div>
         <button class="delete">Remove</button>
       </div>`;
-
         li.innerHTML = text;
         booksList.appendChild(li);
       });
