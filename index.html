@@ -4,19 +4,93 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Awesome Books</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>All Awesome Books</title>
   </head>
   <body>
-    <h1>Awesome Books</h1>
-    <hr />
-    <div>
-      <input type="text" id="title" placeholder="Title..." />
-      <input type="text" id="author" placeholder="Author..." />
-      <button id="addBtn">Add Book</button>
-    </div>
-    <hr />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Awesome Books</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <ul id="booksList"></ul>
+        <div
+          class="collapse navbar-collapse float-right"
+          style="margin-left: 65%"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active border-right border-left"
+                aria-current="page"
+                href="/"
+                >List</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-right" id="addNewBtn" href="#"
+                >Add New</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-right" id="addContactBtn" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-2">
+      <div id="displayArea">
+        <h1 class="text-center font-weight-bold">All awesome books</h1>
+        <div class="bookList">
+          <ul id="booksList" class="list-group border border-dark"></ul>
+        </div>
+      </div>
+
+      <div id="addNewSection" class="d-none">
+        <hr class="breakline" />
+        <div class="form-container">
+          <h2 class="h2 text-center font-weight-bold">Add a new book</h2>
+          <input
+            class="form-control mb-2 border border-dark"
+            type="text"
+            id="title"
+            placeholder="Title..."
+          />
+          <input
+            class="form-control mb-2 border border-dark"
+            type="text"
+            id="author"
+            placeholder="Author..."
+          />
+          <button class="btn btn-outline-dark float-right" id="addBtn">
+            Add Book
+          </button>
+        </div>
+        <hr />
+      </div>
+
+      <div id="contactSection" class="d-none">Contact Us</div>
+    </div>
 
     <script src="app.js"></script>
   </body>

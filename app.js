@@ -2,6 +2,24 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
 const booksList = document.getElementById('booksList');
+const addNewSection = document.getElementById('addNewSection');
+const contactSection = document.getElementById('contactSection');
+const addNewBtn = document.getElementById('addNewBtn');
+const addContactBtn = document.getElementById('addContactBtn');
+const displayArea = document.getElementById('displayArea');
+
+
+// Navigation Area
+addNewBtn.addEventListener('click', () => {
+  displayArea.classList.add('d-none');
+  addNewSection.classList.remove('d-none')
+});
+
+addContactBtn.addEventListener('click', () => {
+  displayArea.classList.add('d-none');
+  addNewSection.classList.add('d-none')
+  contactSection.classList.remove('d-none')
+});
 
 const books = [];
 
