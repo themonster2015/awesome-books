@@ -2,7 +2,7 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
 const booksList = document.getElementById('booksList');
-// Navigation selectors
+// Navigation selector
 const addNewSection = document.getElementById('addNewSection');
 const contactSection = document.getElementById('contactSection');
 const addNewBtn = document.getElementById('addNewBtn');
