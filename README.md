@@ -14,7 +14,6 @@ This is a simple javascript booklist application. The project tests the use of o
 
 ## Getting Started
 
-- Ensure you have rails installed by running 'rails --version'. Otherwise run 'gem install rails'
 - Click on the `Code` green button
 - By the right end of the read-only input containing the repository link click the clipboard icon to copy the link
 - In your local PC, open your terminal in the folder you would like to clone the repository into
@@ -30,9 +29,10 @@ This is a simple javascript booklist application. The project tests the use of o
 - Twitter: [@twitterhandle](https://twitter.com/victoro29641869)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-otieno-22ba7773/)
 
-- GitHub: [@githubhandle](https://github.com/vikitaotiz)
-- Twitter: [@twitterhandle](https://twitter.com/victoro29641869)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-otieno-22ba7773/)
+:bust_in_silhouette: **Vo Thi Quynh Yen**
+
+- GitHub: [@githubhandle](https://github.com/themonster2015)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jen-vo-89bbb74b/)
 
 ## :handshake: Contributing
 
